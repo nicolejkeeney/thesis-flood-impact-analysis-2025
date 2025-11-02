@@ -1,0 +1,16 @@
+﻿flag,flag_meaning,relevant_processing_step,type
+1,Start day originally NaN and was filled with first day of the month,preprocess_emdat,Warning
+2,End day originally NaN and was filled with last day of the month,preprocess_emdat,Warning
+3,MODIS flooded pixels cannot be generated because Terra Surface Reflectance data is not available before 2000-02-25,detect_flooded_pixels,Missing Input Data 
+4,Unspecified Earth Engine internal processing error,detect_flooded_pixels,Earth Engine Error 
+5,Missing GPW population data,extract_event_metrics,Missing Input Data 
+6,Coordinate mismatch error,extract_event_metrics,Data Error 
+7,Admin units manually infilled from Location string,preprocess_emdat,Warning
+8,Admin units manually infilled from literature,preprocess_emdat,Warning
+9,Missing start/end month and/or year,,
+10,Missing location information; could not be infilled,,
+11,Unable to be disagreggated for unknown reasons,,
+12,No flooded pixels detected by MODIS water detection algorithm,,
+13,Population weight calculated by equal division across all admin1-month events (method #2),compute_pop_weighted_damages,
+14,Population weight calculated using flooded pixels and population data (method #1) ,compute_pop_weighted_damages,
+15,Population weight calculated using mixed approach (method #3) ,,

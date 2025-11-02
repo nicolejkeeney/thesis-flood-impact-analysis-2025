@@ -1,0 +1,36 @@
+# Core analysis packages pinned to exact versions for reproducibility
+# Infrastructure packages use major.minor pins for flexibility
+name: flood-impacts
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - black=25.*
+  - cartopy=0.23.*
+  - contextily=1.*
+  - dask=2024.*
+  - earthengine-api=1.*
+  - exactextract=0.2.1
+  - geopandas=1.0.1
+  - geos=3.*
+  - jupyterlab
+  - matplotlib=3.*
+  - netcdf4=1.*
+  - numpy=2.0.2
+  - pandas=2.2.3
+  - proj=9.*
+  - pyproj=3.*
+  - python=3.10.*
+  - rasterio=1.4.3
+  - rioxarray=0.15.*
+  - scipy=1.13.1
+  - seaborn=0.13.*
+  - shapely=2.*
+  - tqdm=4.*
+  - xarray=2024.7.0
+  - xesmf=0.8.*
+  - zarr=2.*
+  - pip
+  - pip:
+    - pyfixest==0.30.2
+    - pylatex==1.4.*

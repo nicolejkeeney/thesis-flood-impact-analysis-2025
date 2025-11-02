@@ -1,0 +1,54 @@
+# Data and outputs (too large for git)
+data/
+!data/data_processing_flags.csv
+figures/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+*.pyo
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Log files
+*.log
+*.out
+*.err
+logs/
+*/logs/
+
+# SLURM job outputs
+slurm-*.out
+*_output.txt
+*_error.txt
+
+# Text input files for batch processing
+text_inputs/
+*/text_inputs/
+
+# Environment
+.env
+.venv
+*.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Claude Code assistant file (keep local only)
+CLAUDE.md
