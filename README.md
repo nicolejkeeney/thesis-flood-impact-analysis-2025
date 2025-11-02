@@ -8,7 +8,7 @@ This research combines multiple global datasets to analyze flood disasters from 
 
 - **EM-DAT**: International disaster database providing flood event records and reported impacts
 - **MODIS**: Satellite imagery (Terra/Aqua) for flood detection via Google Earth Engine
-- **MSWEP/MSWX**: Climate reanalysis data (precipitation, temperature, wind, humidity)
+- **MSWEP**: Climate reanalysis data (precipitation)
 - **GPW v4**: Gridded Population of the World for population-weighting
 - **GAUL 2015**: Global Administrative Unit Layers (admin level 1 boundaries)
 
@@ -18,38 +18,34 @@ This research combines multiple global datasets to analyze flood disasters from 
 2. **Administrative Disaggregation**: Splitting multi-region/multi-month events into admin1-month records
 3. **Population-Weighted Impact Allocation**: Distributing reported damages based on satellite-detected affected populations
 4. **Climate Integration**: Extracting event-specific climate anomalies using zonal statistics
-5. **Panel Construction**: Creating balanced admin1-month panel (2000-2024) for econometric analysis
+5. **Panel Construction**: Creating balanced admin1-month panel (2000-2024) for flood impact analysis
 
 ## Repository Structure
 
 ```
 ├── dataset_generation/       # Data processing pipeline (18 steps)
-│   ├── preprocess_emdat.py   # (key scripts shown)
+│   ├── preprocess_emdat.py
 │   ├── detect_flooded_pixels.py
 │   ├── extract_flood_metrics.py
 │   ├── compute_zonal_stats.py
 │   ├── prepare_panel_dataset.py
 │   ├── utils/                # Helper modules (flood detection, MODIS toolbox, etc.)
-│   └── README.md             # Detailed pipeline documentation
+│   ├── README.md             # Detailed pipeline documentation
+│   └── ...
 │
 ├── data_analysis/            # Analysis scripts and visualizations
-│   ├── panel_analysis.py     # (key scripts shown)
+│   ├── panel_analysis.py
 │   ├── emdat_modis_regression.py
 │   ├── summary_maps.py
 │   ├── produce_all_figures.sh
-│   └── README.md
+│   ├── README.md
+│   └── ...
 │
 ├── hpc/                      # HPC job scripts (SLURM)
 │   └── README.md
 │
-├── data/                     # Data files (not tracked in git)
-│   ├── event_level_flood_dataset.csv  # Final event-level dataset
-│   ├── panel_dataset.csv              # Panel dataset
-│   └── ...
-│
-├── figures/                  # Generated figures (not tracked in git)
-│
-├── text_inputs/              # Input files for parallel processing
+├── data/                     # Data files (not tracked in git, except flags)
+│   └── data_processing_flags.csv      # Flag definitions
 │
 ├── environment.yml           # Conda environment specification
 └── LICENSE                   # MIT License
@@ -72,7 +68,7 @@ conda activate flood-impacts
 - **Earth Engine**: `earthengine-api` (requires GEE account for flood detection step)
 - **Analysis**: `pandas`, `numpy`, `scipy`, `matplotlib`, `seaborn`
 - **Econometrics**: `pyfixest` (panel regression)
-- **Parallel processing**: `dask`, `exactextract`, `tqdm`
+- **Parallel processing**: `dask`, `exactextract` 
 
 See `environment.yml` for complete dependency list with version specifications.
 
