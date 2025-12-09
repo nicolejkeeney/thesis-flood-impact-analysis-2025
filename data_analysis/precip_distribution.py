@@ -17,9 +17,9 @@ import matplotlib.pyplot as plt
 
 # Figure settings
 FIG_DPI = 500
-TITLE_FONTSIZE = 18
-TICK_FONTSIZE = 13
-LABEL_FONTSIZE = 14
+TITLE_FONTSIZE = 24
+TICK_FONTSIZE = 20
+LABEL_FONTSIZE = 23
 plt.rcParams["font.family"] = "Georgia"
 
 DATA_DIR = "../data/"
@@ -142,11 +142,11 @@ def plot_precipitation_histograms(
     )
     ax5.set_ylim(0, 0.3)
     ax5.set_title(
-        "prob. of a flood by precipitation anomaly",
+        "prob. of a flood by\nprecipitation anomaly",
         fontsize=TITLE_FONTSIZE - 1,
         loc="left",
     )
-    ax5.set_xlabel("monthly precipitation anomaly (s.d.)", fontsize=LABEL_FONTSIZE)
+    ax5.set_xlabel("monthly precip anomaly (s.d.)", fontsize=LABEL_FONTSIZE)
     ax5.set_ylabel("fraction (0-1)", fontsize=LABEL_FONTSIZE)
 
     # Format all axes
@@ -196,7 +196,7 @@ def main():
         panel_df,
         # title="Monthly Precipitation Anomaly Distributions",
         savepath=OUTPUT_FILEPATH,
-        panel_labels=True,  # Add a,b,c,d,e to plots
+        panel_labels=False,  # Add a,b,c,d,e to plots
     )
 
 

@@ -18,9 +18,9 @@ OUTPUT_FILEPATH = f"{FIGS_DIR}event_duration_flooded_pixels_violinplot.png"
 
 # Figure settings
 FIG_DPI = 500
-TITLE_FONTSIZE = 18
-TICK_FONTSIZE = 13
-LABEL_FONTSIZE = 14
+TITLE_FONTSIZE = 24
+TICK_FONTSIZE = 20
+LABEL_FONTSIZE = 23
 plt.rcParams["font.family"] = "Georgia"
 
 
@@ -51,12 +51,12 @@ def create_violin_plot(
     combined_data = pd.concat([no_flooded_data, yes_flooded_data], ignore_index=True)
 
     # Create the plot
-    plt.figure(figsize=(6, 5))
+    plt.figure(figsize=(7, 4))
     ax = sns.violinplot(
         data=combined_data,
         x="category",
         y="event_duration (days)",
-        color="paleturquoise",
+        color="plum",
         inner="box",
     )
 

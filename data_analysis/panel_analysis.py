@@ -26,9 +26,9 @@ PANEL_FIGS_DIR = f"{FIGS_DIR}panel_model/"
 
 # Figure settings
 FIG_DPI = 500
-TITLE_FONTSIZE = 18
-TICK_FONTSIZE = 13
-LABEL_FONTSIZE = 14
+TITLE_FONTSIZE = 24
+TICK_FONTSIZE = 20
+LABEL_FONTSIZE = 23
 plt.rcParams["font.family"] = "Georgia"
 
 # Bootstrap and plotting settings
@@ -138,9 +138,9 @@ def plot_model_predictions(
         )
 
     # Rest of plotting code unchanged
-    ax2.set_ylabel("ln(normalized total affected)", fontsize=LABEL_FONTSIZE)
+    ax2.set_ylabel("ln(total affected)", fontsize=LABEL_FONTSIZE)
     ax2.set_title("Total People Affected", fontsize=LABEL_FONTSIZE + 1)
-    ax1.set_ylabel("ln(GDP-standardized damages)", fontsize=LABEL_FONTSIZE)
+    ax1.set_ylabel("ln(damages)", fontsize=LABEL_FONTSIZE)
     ax1.set_title("GDP-Standardized Damages", fontsize=LABEL_FONTSIZE + 1)
 
     for ax in ax1, ax2:

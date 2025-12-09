@@ -13,9 +13,9 @@ import pandas as pd
 
 # Figure settings
 FIG_DPI = 500
-TITLE_FONTSIZE = 18
-TICK_FONTSIZE = 13
-LABEL_FONTSIZE = 14
+TITLE_FONTSIZE = 24
+TICK_FONTSIZE = 20
+LABEL_FONTSIZE = 23
 plt.rcParams["font.family"] = "Georgia"
 
 # Filepaths
@@ -47,40 +47,27 @@ def main():
     columns = ["No. Affected", "Total Damage, Adjusted ('000 US$)", "event_count"]
     ylabels = ["# People", "'000 US$", "count"]
     titles = [
-        "Number of People Affected",
-        "Total Damages ('000 US$)",
-        "Number of Floods",
+        "a) Number of People Affected",
+        "b) Total Damages ('000 US$)",
+        "c) Number of Floods\n",
     ]
     colors = ["#1b9e77", "#d95f02", "#7570b3"]
-    plot_labels = ["a)", "b)", "c)"]
 
-    fig, axes = plt.subplots(1, 3, figsize=(12, 5))  # 1 row, 3 columns
+    fig, axes = plt.subplots(1, 3, figsize=(15, 5))  # 1 row, 3 columns
 
-    for ax, col, title, ylabel, color, ax_label in zip(
-        axes, columns, titles, ylabels, colors, plot_labels
-    ):
+    for ax, col, title, ylabel, color in zip(axes, columns, titles, ylabels, colors):
         ax.bar(emdat_agg["Start Year"], emdat_agg[col], color=color)
         ax.set_xlabel("Year", fontsize=LABEL_FONTSIZE)
         ax.set_ylabel(ylabel, fontsize=LABEL_FONTSIZE)
         ax.tick_params(axis="x", labelsize=TICK_FONTSIZE, rotation=45)
         ax.tick_params(axis="y", labelsize=TICK_FONTSIZE)
-        ax.set_title(title, fontsize=TITLE_FONTSIZE)
+        ax.set_title(title, fontsize=TITLE_FONTSIZE, pad=20)
         ax.set_xticks(range(2000, 2024 + 1, 4))
         ax.yaxis.get_offset_text().set_fontsize(TICK_FONTSIZE)  # adjust font size
-        ax.text(
-            -0.15,
-            1.12,
-            ax_label,
-            transform=ax.transAxes,
-            fontsize=TITLE_FONTSIZE,
-            fontweight="bold",
-            verticalalignment="top",
-            horizontalalignment="right",
-        )
 
-    plt.subplots_adjust(wspace=0.1)  # increase horizontal space
     # plt.suptitle("EM-DAT Annual Aggregated Impacts", fontsize=TITLE_FONTSIZE+2, fontweight="bold")
     plt.tight_layout()
+    plt.subplots_adjust(wspace=0.5)  # increase horizontal space between subplots
     plt.savefig(OUTPUT_FILEPATH, dpi=FIG_DPI, bbox_inches="tight")
     print(f"Saved figure to {OUTPUT_FILEPATH}")
 
