@@ -8,7 +8,7 @@ This research combines multiple global datasets to analyze flood disasters from 
 
 - **EM-DAT**: International disaster database providing flood event records and reported impacts
 - **MODIS**: Satellite imagery (Terra/Aqua) for flood detection via Google Earth Engine
-- **MSWEP**: Climate reanalysis data (precipitation)
+- **MSWEP/MSWX**: Climate reanalysis data 
 - **GPW v4**: Gridded Population of the World for population-weighting
 - **GAUL 2015**: Global Administrative Unit Layers (admin level 1 boundaries)
 
@@ -19,6 +19,12 @@ This research combines multiple global datasets to analyze flood disasters from 
 3. **Population-Weighted Impact Allocation**: Distributing reported damages based on satellite-detected affected populations
 4. **Climate Integration**: Extracting event-specific climate anomalies using zonal statistics
 5. **Panel Construction**: Creating balanced admin1-month panel (2000-2024) for flood impact analysis
+
+## About This Research
+
+This repository contains the complete codebase for Nicole Keeney's Master of Science thesis in the Department of Civil & Environmental Engineering at Colorado State University (2025). The research develops methods for spatially and temporally disaggregating disaster event records using satellite imagery, constructs a balanced panel dataset of flood events from 2000-2024, and uses panel regression analysis to examine the relationship between climate variables and flood impacts across global administrative regions.
+
+This work was presented at the American Geophysical Union (AGU) Fall Meeting 2025 (doi: ADD DOI)
 
 ## Repository Structure
 
@@ -93,12 +99,7 @@ See `data/data_processing_flags.csv` for complete flag definitions.
 
 ## Issues and Support
 
-If you encounter any problems with the code, data, or documentation, please [open an issue](https://github.com/njkeeney/modis-event-damages/issues) on GitHub. When reporting an issue, please include:
-
-- A clear description of the problem
-- Steps to reproduce the issue
-- Your environment details (OS, Python version, etc.)
-- Any relevant error messages or output
+If you encounter any problems with the code, data, or documentation, please shoot me an email! 
 
 ## License
 
