@@ -1,8 +1,10 @@
 # Flood Disaster Impacts: EM-DAT and MODIS Analysis
 
-This repository contains the complete data processing pipeline and analysis code for combining EM-DAT disaster records with MODIS satellite imagery, climate reanalysis data, and population data to study flood disaster impacts.
+This repository contains the complete codebase for Nicole Keeney's Master of Science thesis in the Department of Civil & Environmental Engineering at Colorado State University (2025). The research develops methods for spatially and temporally disaggregating disaster event records using satellite imagery, constructs a balanced panel dataset of flood events from 2000-2024, and uses panel regression analysis to examine the relationship between climate variables and flood impacts across global administrative regions. It also includes SLURM batch scripts for submitting processing jobs on CSU's HPC cluster, used in various steps in the analysis. 
 
-## Overview
+This work was presented at the American Geophysical Union (AGU) Fall Meeting 2025 (doi: ADD DOI)
+
+## Data
 
 This research combines multiple global datasets to analyze flood disasters from 2000-2024:
 
@@ -12,19 +14,21 @@ This research combines multiple global datasets to analyze flood disasters from 
 - **GPW v4**: Gridded Population of the World for population-weighting
 - **GAUL 2015**: Global Administrative Unit Layers (admin level 1 boundaries)
 
-### Key Methods
+### Data Source Licenses
+
+- **EM-DAT**: Subject to EM-DAT terms of use
+- **MODIS**: NASA data, publicly available
+- **GPW**: Creative Commons Attribution 4.0
+- **GAUL**: FAO terms of use
+- **MSWEP/MSWX**: Check respective data provider terms
+
+## Key Methods
 
 1. **Flood Detection**: Adapted Cloud2Street algorithm for MODIS-based flood mapping
 2. **Administrative Disaggregation**: Splitting multi-region/multi-month events into admin1-month records
 3. **Population-Weighted Impact Allocation**: Distributing reported damages based on satellite-detected affected populations
 4. **Climate Integration**: Extracting event-specific climate anomalies using zonal statistics
 5. **Panel Construction**: Creating balanced admin1-month panel (2000-2024) for flood impact analysis
-
-## About This Research
-
-This repository contains the complete codebase for Nicole Keeney's Master of Science thesis in the Department of Civil & Environmental Engineering at Colorado State University (2025). The research develops methods for spatially and temporally disaggregating disaster event records using satellite imagery, constructs a balanced panel dataset of flood events from 2000-2024, and uses panel regression analysis to examine the relationship between climate variables and flood impacts across global administrative regions.
-
-This work was presented at the American Geophysical Union (AGU) Fall Meeting 2025 (doi: ADD DOI)
 
 ## Repository Structure
 
@@ -105,13 +109,6 @@ If you encounter any problems with the code, data, or documentation, please shoo
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-### Data Source Licenses
-
-- **EM-DAT**: Subject to EM-DAT terms of use
-- **MODIS**: NASA data, publicly available
-- **GPW**: Creative Commons Attribution 4.0
-- **GAUL**: FAO terms of use
-- **MSWEP/MSWX**: Check respective data provider terms
 
 ## Acknowledgments
 
