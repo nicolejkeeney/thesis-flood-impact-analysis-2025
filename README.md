@@ -50,6 +50,9 @@ This research combines multiple global datasets to analyze flood disasters from 
 │
 ├── data/                     # Data files (not tracked in git, except flags)
 │   └── data_processing_flags.csv      # Flag definitions
+|
+├── figures/                  # Example figures from the analysis
+│   └── ... 
 │
 ├── environment.yml           # Conda environment specification
 └── LICENSE                   # MIT License
