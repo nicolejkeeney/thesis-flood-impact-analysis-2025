@@ -126,7 +126,6 @@ def main():
     metrics_df["data_processing_flags"] = metrics_df["data_processing_flags"].fillna("")
     emdat_df.drop("data_processing_flags", axis=1, inplace=True)
 
-    print("Got here")
     # Merge metrics into emdat dataframe
     flags_df = emdat_df.merge(
         metrics_df, on=list(emdat_df.columns), how="left"  # column to merge on
@@ -136,7 +135,6 @@ def main():
     ## GET THE ROWS THAT ARE MISSING FROM EMDAT_ORIG_DF
     ## AND ADD APPROPRIATE FLAGS
 
-    print("Got here2")
     missing_df = get_missing_rows(emdat_orig_df, metrics_df)
     missing_df = missing_df[
         [col for col in missing_df.columns if col in flags_df.columns]

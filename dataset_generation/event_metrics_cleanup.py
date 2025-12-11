@@ -3,7 +3,7 @@ event_metrics_cleanup.py
 
 Add event duration
 Reorder index
-Correct countries where adm0 does not match GAUL naming 
+Correct countries where adm0 does not match GAUL naming
 
 """
 
@@ -48,6 +48,7 @@ COUNTRY_CORRECTIONS = {
     40431: "Jammu and Kashmir",
 }
 
+
 def add_event_duration(emdat_df):
     """
     Add event duration
@@ -89,9 +90,11 @@ def main():
         input_df["id"], categories=emdat_orig_df["id"].values, ordered=True
     )
     input_df = input_df.sort_values("id").reset_index(drop=True)
-    
+
     # Correct country assignments for problematic admin1 codes
-    print("Correcting country assignments for admin1 codes where theres a mismatch between EM-DAT and GAUL...")
+    print(
+        "Correcting country assignments for admin1 codes where theres a mismatch between EM-DAT and GAUL..."
+    )
     for code, correct_country in COUNTRY_CORRECTIONS.items():
         mask = input_df["adm1_code"] == code
         if mask.any():
