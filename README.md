@@ -23,6 +23,7 @@ This research combines multiple global datasets to analyze flood disasters from 
 5. **Panel Construction**: Create balanced admin1-month panel (2000-2024) for flood impact analysis. 
 6. **Panel Regression Analysis**: Perform panel regression analysis to determine the contribution of extreme precipitation to flood impacts. 
 
+
 ## Repository Structure
 
 ```
@@ -97,14 +98,3 @@ See `data/data_processing_flags.csv` for complete flag definitions.
 ## Issues and Support
 
 If you encounter any problems with the code, data, or documentation, please shoot me an email! 
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-
-## Acknowledgments
-
-- **Cloud2Street** for the MODIS flood detection algorithm
-- **EM-DAT** (CRED, UCLouvain) for disaster data
-- **NASA** for MODIS imagery and Earth Engine platform
