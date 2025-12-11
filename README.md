@@ -14,21 +14,14 @@ This research combines multiple global datasets to analyze flood disasters from 
 - **GPW v4**: Gridded Population of the World for population-weighting
 - **GAUL 2015**: Global Administrative Unit Layers (admin level 1 boundaries)
 
-### Data Source Licenses
-
-- **EM-DAT**: Subject to EM-DAT terms of use
-- **MODIS**: NASA data, publicly available
-- **GPW**: Creative Commons Attribution 4.0
-- **GAUL**: FAO terms of use
-- **MSWEP/MSWX**: Check respective data provider terms
-
 ## Key Methods
 
-1. **Flood Detection**: Adapted Cloud2Street algorithm for MODIS-based flood mapping
-2. **Administrative Disaggregation**: Splitting multi-region/multi-month events into admin1-month records
-3. **Population-Weighted Impact Allocation**: Distributing reported damages based on satellite-detected affected populations
-4. **Climate Integration**: Extracting event-specific climate anomalies using zonal statistics
-5. **Panel Construction**: Creating balanced admin1-month panel (2000-2024) for flood impact analysis
+1. **EM-DAT Event Disaggregation & Geospatial Encoding**: Splitting multi-region/multi-month events into admin1-month records, and matching each admin1-month event to it's corresponding GAUL administrative region 1 polygon. 
+2. **Flood Detection**: For each admin1-month event, use an adapted version of the [Cloud2Street flood detection algorithm](https://github.com/cloudtostreet/MODIS_GlobalFloodDatabase) to create floodmaps. 
+3. **Population-Weighted Impact Allocation**: For each admin1-month event, use population-weighting to distribute flood impact variables 
+4. **Climate Data**: Characterize the meteorological conditions of each admin1-month event by computing monthly standardized precipitation anomalies. 
+5. **Panel Construction**: Create balanced admin1-month panel (2000-2024) for flood impact analysis. 
+6. **Panel Regression Analysis**: Perform panel regression analysis to determine the contribution of extreme precipitation to flood impacts. 
 
 ## Repository Structure
 
