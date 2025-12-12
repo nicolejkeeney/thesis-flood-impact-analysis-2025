@@ -2,7 +2,8 @@
 
 This repository contains the complete codebase for Nicole Keeney's Master of Science thesis in the Department of Civil & Environmental Engineering at Colorado State University (2025). The research develops methods for spatially and temporally disaggregating disaster event records using satellite imagery, constructs a balanced panel dataset of flood events from 2000-2024, and uses panel regression analysis to examine the relationship between climate variables and flood impacts across global administrative regions. It also includes SLURM batch scripts for submitting processing jobs on CSU's HPC cluster, used in various steps in the analysis. 
 
-This work was presented at the American Geophysical Union (AGU) Fall Meeting 2025 (doi: ADD DOI)
+This work was presented at the American Geophysical Union (AGU) Fall Meeting 2025. The associated conference abstract and poster are archived on the ESS Open Archive (DOI: https://doi.org/10.22541/essoar.176556342.22758821/v1).
+
 
 ## Data
 
